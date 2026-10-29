@@ -689,11 +689,11 @@ endforeach()
 if(NOT EXECUTABLE_COMPONENT_NAME)
     set(EXECUTABLE_COMPONENT_NAME "main")
 endif()
-idf_component_get_property(main_lib ${EXECUTABLE_COMPONENT_NAME} COMPONENT_LIB)
-set(chip_libraries $<TARGET_FILE:${main_lib}>)
-target_link_libraries(${COMPONENT_LIB} INTERFACE -Wl,--start-group
-                                                ${chip_libraries}
-                                                -Wl,--end-group)
+# idf_component_get_property(main_lib ${EXECUTABLE_COMPONENT_NAME} COMPONENT_LIB)
+# set(chip_libraries $<TARGET_FILE:${main_lib}>)
+# target_link_libraries(${COMPONENT_LIB} INTERFACE -Wl,--start-group
+#                                                 ${chip_libraries}
+#                                                 -Wl,--end-group)
 
 cmake_policy(GET CMP0007 policy_status)
 # Set new CMP0007 policy to prevent cmake warning

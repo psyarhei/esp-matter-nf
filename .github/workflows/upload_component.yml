@@ -22,3 +22,4 @@ jobs:
           name: "esp_matter"
           namespace: ${{ github.repository_owner }}
           api_token: ${{ secrets.IDF_COMPONENT_API_TOKEN }}
+          version: v1.6.0

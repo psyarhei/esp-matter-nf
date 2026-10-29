@@ -9,7 +9,7 @@ on:
 jobs:
   upload_components:
     # Disable the job in forks
-    if: ${{ github.repository_owner == 'espressif' }}
+    # if: ${{ github.repository_owner == 'espressif' }}
 
     runs-on: ubuntu-latest
     steps:
@@ -20,5 +20,5 @@ jobs:
         uses: espressif/upload-components-ci-action@v1
         with:
           name: "esp_matter"
-          namespace: "espressif"
+          namespace: ${{ github.repository_owner }}
           api_token: ${{ secrets.IDF_COMPONENT_API_TOKEN }}
